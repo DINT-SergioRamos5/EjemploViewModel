@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EjemploViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" Icon="icono.ico">
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Save"
+                        Executed="SaveCommandBinding_Executed"/>
+    </Window.CommandBindings>
+    
+    <StackPanel>
+        <ComboBox x:Name="ClienteModificarComboBox"  ItemsSource="{Binding Clientes}" 
+                  SelectedItem="{Binding clienteSeleccionado}" Width="150" DisplayMemberPath="id"
+                  HorizontalAlignment="Left"></ComboBox>
         
-    </Grid>
+        <TextBlock>Identificador</TextBlock>
+        <TextBox Text="{Binding clienteSeleccionado.id}"></TextBox>
+        <TextBlock>Nombre</TextBlock>
+        <TextBox Text="{Binding clienteSeleccionado.nombre}"></TextBox>
+        <TextBlock>Apellido</TextBlock>
+        <TextBox Text="{Binding clienteSeleccionado.apellido}"></TextBox>
+        <Button Margin="6" Padding="5,0,5,0" Content="Modificar" HorizontalAlignment="Left" Command="ApplicationCommands.Save" ></Button>
+    </StackPanel>       
+    
 </Window>

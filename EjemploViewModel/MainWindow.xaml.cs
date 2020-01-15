@@ -23,6 +23,12 @@ namespace EjemploViewModel
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowVM();
+        }
+
+        private void SaveCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            (this.DataContext as MainWindowVM).Modificar();
         }
     }
 }
