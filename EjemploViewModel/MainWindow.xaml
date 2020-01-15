@@ -12,11 +12,10 @@
                         Executed="SaveCommandBinding_Executed"/>
     </Window.CommandBindings>
     
-    <StackPanel>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <ComboBox x:Name="ClienteModificarComboBox"  ItemsSource="{Binding Clientes}" 
                   SelectedItem="{Binding clienteSeleccionado}" Width="150" DisplayMemberPath="id"
-                  HorizontalAlignment="Left"></ComboBox>
-        
+                  HorizontalAlignment="Left"></ComboBox>        
         <TextBlock>Identificador</TextBlock>
         <TextBox Text="{Binding clienteSeleccionado.id}"></TextBox>
         <TextBlock>Nombre</TextBlock>
