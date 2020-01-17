@@ -15,17 +15,11 @@ namespace EjemploViewModel
         public BaseDatos()
         {
             contexto = new BaseDatosInformeEntities();
-        }
-    
-        public ObservableCollection<CLIENTE> CargarClientes()
-        {
             contexto.CLIENTES.Load();
-            return contexto.CLIENTES.Local;            
         }
 
-        public void Guardar()
-        {
-            contexto.SaveChanges();
-        }
+        public ObservableCollection<CLIENTE> CargarClientes() => contexto.CLIENTES.Local;
+
+        public void Guardar() => contexto.SaveChanges();
     }
 }
